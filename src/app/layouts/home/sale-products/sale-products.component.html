@@ -1,0 +1,29 @@
+<div class="container sale-products mt-10">
+  <div class="bold-text text-3xl">
+    Sản phẩm giảm giá
+  </div>
+
+  <div class="sale-products-content">
+    <swiper
+      [slidesPerView]="4"
+      [spaceBetween]="24"
+      [loop]="true"
+    >
+      <ng-template swiperSlide>
+        <app-product-item></app-product-item>
+      </ng-template>
+      <ng-template swiperSlide>
+        <app-product-item></app-product-item>
+      </ng-template>
+      <ng-template swiperSlide>
+        <app-product-item></app-product-item>
+      </ng-template>
+      <ng-template swiperSlide>
+        <app-product-item></app-product-item>
+      </ng-template>
+      <ng-template swiperSlide>
+        <app-product-item></app-product-item>
+      </ng-template>
+    </swiper>
+  </div>
+</div>
