@@ -1,0 +1,30 @@
+<div class="header">
+  <div class="block w-full border-solid border-b border-gray-500">
+    <div class="container !h-24 flex justify-between items-center">
+      <a href="/" class="router-link-active router-link-exact-active header-logo" aria-current="page">
+        <img src="/assets/images/logo.png">
+      </a>
+      <form class="header-search flex h-10 w-96 items-center">
+        <div class="h-10 w-full">
+          <input class="px-2" placeholder="Tìm kiếm" value="">
+        </div>
+        <button class="h-10 w-16">
+          <i nz-icon nzType="search" nzTheme="outline"></i>
+        </button>
+      </form>
+      <div class="flex items-center">
+        <a routerLink="/login" class="ml-4 bg-gray-100 rounded px-2 py-1"> Login </a>
+        <a routerLink="/register" class="ml-4 bg-gray-100 rounded px-2 py-1"> Register </a>
+      </div>
+    </div>
+  </div>
+  <div class="block w-full">
+    <div class="container !h-12">
+      <div class="header-nav h-full flex justify-center items-center">
+        <a routerLink="/"  class="header-nav-item bold-text" routerLinkActive="header-nav-item-active" aria-current="page">TRANG CHỦ</a>
+        <a routerLink="/danh-muc/dong-ho-nam" class="header-nav-item bold-text"> ĐỒNG HỒ NAM </a>
+        <a routerLink="/danh-muc/dong-ho-nu" class="header-nav-item bold-text"> ĐỒNG HỒ NỮ </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h3>Using FormControl </h3>
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name">
+  <input type="text" formControlName="age">
+
+  <button type="submit">Submit Application</button>
+</form>
