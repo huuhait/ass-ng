@@ -63,8 +63,26 @@ body {
 .layout-content {
   flex: auto;
   min-height: 0;
+  padding-bottom: 20px;
 }
 
 a {
   transition: color 0.3s ease-in-out;
+}
+
+form {
+  button {
+    background-color: #c89979 !important;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  
+    &:disabled {
+      background-color: #ccc !important;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: #e2b191 !important;
+    }
+  } 
 }

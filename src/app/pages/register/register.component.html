@@ -1,0 +1,21 @@
+<div class="container mt-20">
+  <div class="w-96 m-auto">
+    <h3 class="text-3xl">
+      Register
+    </h3>
+  
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <div>Email</div>
+      <input type="text" formControlName="email" class="h-8 border-solid border rounded border-gray-300 radis px-3">
+      <span class="text-red-500">{{ email_error }}</span>
+      <div>Password</div>
+      <input type="text" formControlName="password" class="h-8 border-solid border rounded border-gray-300 radis px-3">
+      <span class="text-red-500">{{ password_error }}</span>
+      <div>Confirm Password</div>
+      <input type="text" formControlName="confirm_password" class="h-8 border-solid border rounded border-gray-300 radis px-3">
+      <span class="text-red-500">{{ confirm_password_error }}</span>
+    
+      <button type="submit" class="w-full mt-4 rounded h-10" [disabled]="email_error || password_error || confirm_password_error">Submit</button>
+    </form>
+  </div>
+</div>

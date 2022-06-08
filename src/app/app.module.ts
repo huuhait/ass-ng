@@ -19,6 +19,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SaleProductsComponent } from './layouts/home/sale-products/sale-products.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 registerLocaleData(en);
 
@@ -31,7 +33,9 @@ registerLocaleData(en);
     ProductItemComponent,
     LayoutComponent,
     HomeComponent,
-    SaleProductsComponent
+    SaleProductsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
