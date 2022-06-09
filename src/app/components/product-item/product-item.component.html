@@ -1,5 +1,5 @@
 <div class="product-item flex-1">
-  <a href="/product/{{ product.id }}" class="block border border-gray-300">
+  <a routerLink="/product/{{ product.id }}" class="block border border-gray-300">
     <div class="product-image">
       <img src="{{ product.image_url }}" />
     </div>
@@ -9,7 +9,7 @@
         <span class="product-item-price-old">{{ product.price }}đ </span>
         <span class="product-item-price-now bold-text">{{ product.sale_price }}đ</span>
       </div>
-      <span class="product-item-link" to="/product/3"> XEM CHI TIẾT </span>
+      <a class="product-item-link" routerLink="/product/{{ product.id }}"> XEM CHI TIẾT </a>
     </div>
   </a>
 </div>

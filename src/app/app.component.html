@@ -1,7 +1,8 @@
 <app-layout>
-  <app-header></app-header>
-  <div class="layout-content">
+  <app-header *ngIf="!currentRoute.includes('/admin')"></app-header>
+  <div *ngIf="!currentRoute.includes('/admin')" class="layout-content">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <router-outlet *ngIf="currentRoute.includes('/admin')"></router-outlet>
+  <app-footer *ngIf="!currentRoute.includes('/admin')"></app-footer>
 </app-layout>

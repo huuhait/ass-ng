@@ -21,6 +21,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { SaleProductsComponent } from './layouts/home/sale-products/sale-products.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProductComponent } from './pages/product/product.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ProductsComponent } from './pages/admin/products/products.component';
+import { CreateUpdateComponent } from './pages/admin/products/create-update/create-update.component';
 
 registerLocaleData(en);
 
@@ -35,7 +41,12 @@ registerLocaleData(en);
     HomeComponent,
     SaleProductsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductComponent,
+    CartComponent,
+    AdminComponent,
+    ProductsComponent,
+    CreateUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +56,11 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NzIconModule,
-    SwiperModule
+    SwiperModule,
+    MatSlideToggleModule
+  ],
+  exports: [
+    MatSlideToggleModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

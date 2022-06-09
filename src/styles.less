@@ -86,3 +86,50 @@ form {
     }
   } 
 }
+
+.text {
+  &-left {
+    text-align: left !important;
+  }
+
+  &-right {
+    text-align: right !important;
+  }
+
+  &-center {
+    text-align: center !important;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.admin-card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+
+  &-title {
+    color: rgb(161, 161, 161);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    border-bottom: 2px solid rgb(161, 161, 161);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+
+  button {
+    background-color: #c89979;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 8px;
+    margin-top: 12px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgba(#c89979, 0.75)
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="admin-layout flex h-screen w-screen overflow-hidden">
+  <div class="admin-layout-menu w-74 bg-dark-500-400 h-full">
+    <div class="admin-layout-menu-logo">
+      <img src="/assets/images/logo.png">
+    </div>
+
+    <div class="admin-layout-menu-nav">
+      <a routerLink="/admin/users" class="admin-layout-menu-nav-item bold-text">
+        Users
+      </a>
+      <a routerLink="/admin/carts" class="admin-layout-menu-nav-item bold-text">
+        Carts
+      </a>
+      <a routerLink="/admin/categories" class="admin-layout-menu-nav-item bold-text">
+        Categories
+      </a>
+      <a routerLink="/admin/products" class="admin-layout-menu-nav-item bold-text">
+        Products
+      </a>
+      <a routerLink="/admin/slideshow" class="admin-layout-menu-nav-item bold-text">
+        Slideshow
+      </a>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="admin-layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

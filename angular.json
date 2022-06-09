@@ -36,6 +36,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "./node_modules/swiper/swiper.min.css",
               "src/styles.less"
             ],
@@ -105,6 +106,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "./node_modules/swiper/swiper.min.css",
               "src/styles.less"
             ],
