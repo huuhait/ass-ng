@@ -1,0 +1,54 @@
+<div class="admin-card">
+  <div class="admin-card-title">
+    Products
+  </div>
+
+  <div class="admin-card-content">
+    <table class="w-full">
+      <thead>
+        <th class="text-left">ID</th>
+        <th class="text-left">Name</th>
+        <th class="text-left">Price</th>
+        <th class="text-left">Sale Price</th>
+        <th class="text-center">Status</th>
+        <th class="text-right">Action</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-left">1</td>
+          <td class="text-left">Product 1</td>
+          <td class="text-left">$100</td>
+          <td class="text-left">$50</td>
+          <td class="text-center">
+            <mat-slide-toggle></mat-slide-toggle>
+          </td>
+          <td class="text-right">
+            <button routerLink="/admin/products/1" class="ml-2">
+              Update
+            </button>
+            <button class="ml-2">
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">2</td>
+          <td class="text-left">Product 2</td>
+          <td class="text-left">$100</td>
+          <td class="text-left">$50</td>
+          <td class="text-center">
+            <mat-slide-toggle></mat-slide-toggle>
+          </td>
+          <td class="text-right">
+            <button routerLink="/admin/products/1" class="ml-2">
+              Update
+            </button>
+            <button class="ml-2">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
