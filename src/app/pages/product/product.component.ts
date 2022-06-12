@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+import { Product } from 'src/types';
 
 @Component({
   selector: 'app-product',
@@ -6,20 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.less']
 })
 export class ProductComponent implements OnInit {
-  product = {
-    id: 1,
-    name: "Nguyễn Nhật Ánh",
-    price: 100,
-    sale_price: 97,
-    description: "Product description",
-    image_url: "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
-    category_id: 1,
-    status: 1,
-  }
+  loading = false
+  product!: Product
 
   quantity = 1
 
+  constructor(public http: HttpClient, public route: ActivatedRoute, public cartService: CartService) { }
+
   ngOnInit(): void {
+    this.loading = true
+    this.route.params.subscribe(params => {
+      this.http.get<Product>(`http://localhost:3000/products/${params["id"]}`).subscribe((product: Product) => {
+        this.product = product
+        this.loading = false
+      })
+    })
   }
 
   onQuantityInput(event: Event) {
@@ -38,5 +43,9 @@ export class ProductComponent implements OnInit {
     if (this.quantity > 1) {
       this.quantity--
     }
+  }
+
+  onSubmit() {
+    this.cartService.addToCart(this.product.id, this.quantity)
   }
 }

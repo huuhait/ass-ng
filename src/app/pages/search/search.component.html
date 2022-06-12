@@ -1,0 +1,14 @@
+<div class="container mt-20">
+  <div class="text-4xl">Kết quả cho: {{ name }}</div>
+  <div class="flex mt-4">
+    <div class="h-fit border border-gray-400 w-80 px-2 py-4 rounded mr-6">
+      <div class="bold-text text-xl">Danh mục</div>
+      <div class="block mt-4">
+        <a *ngFor="let c of categories" class="block mt-1" routerLink="/category/{{c.id}}">{{ c.name }}</a>
+      </div>
+    </div>
+    <div class="w-fit grid grid-cols-4 gap-4">
+      <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+    </div>
+  </div>
+</div>

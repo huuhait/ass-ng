@@ -5,29 +5,33 @@
       <th>GIÁ</th>
       <th class="text-center">SỐ LƯỢNG</th>
       <th class="text-right">TỔNG</th>
+      <th></th>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <a routerLink="/" class="h-20 flex items-center">
-            <img class="h-full" src="https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg">
-            QUẦN XÌ
-          </a>
-        </td>
-        <td>100.000đ</td>
-        <td class="text-center">2</td>
-        <td class="text-right">200.000đ</td>
+      <tr *ngIf="carts.length == 0">
+        <td>Bạn chưa có giỏ hàng</td>
       </tr>
-      <tr>
+      <tr *ngFor="let cart of carts">
         <td>
-          <a routerLink="/" class="h-20 flex items-center">
-            <img class="h-full" src="https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg">
-            QUẦN XÌ
+          <a routerLink="/product/{{ cart.product.id }}" class="h-20 flex items-center">
+            <img class="h-full" src="{{ cart.product.image_url }}">
+            {{ cart.product.name }}
           </a>
         </td>
-        <td>100.000đ</td>
-        <td class="text-center">2</td>
-        <td class="text-right">200.000đ</td>
+        <td>{{ cart.product.sale_price.toLocaleString() }}đ</td>
+        <td class="text-center">
+          <div class="inline-flex mr-10 border-2">
+            <span class="border-2 cursor-pointer h-10 w-6 flex justify-center items-center bg-gray-200" type="button" (click)="updateQuantity(cart.product.id, cart.quantity - 1)">-</span>
+            <input value="{{ cart.quantity }}" class="text-center h-10 border-t-[2px] border-b-[2px] m-0 w-10" type="text" (input)="onQuantityInput($event, cart.product.id)">
+            <span class="border-2 cursor-pointer h-10 w-6 flex justify-center items-center bg-gray-200" type="button" (click)="updateQuantity(cart.product.id, cart.quantity + 1)">+</span>
+          </div>
+        </td>
+        <td class="text-right">{{ (cart.product.sale_price * cart.quantity).toLocaleString() }}đ</td>
+        <td class="text-right">
+          <button class="bg-red-400 text-white flex h-8 w-12 items-center text-center m-auto rounded justify-center" (click)="removeFromCart(cart.product.id)">
+            XÓA
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -41,11 +45,16 @@
         Tổng phụ
       </span>
       <span class="bold-text">
-        400.000đ
+        {{ total.toLocaleString() }}đ
       </span>
     </div>
-    <Button class="block w-full rounded px-4 py-2 mt-8 text-center">
-      ĐẶT HÀNG
-    </Button>
+    <div class="mt-6">Địa chỉ</div>
+    <form [formGroup]="formCart" (ngSubmit)="createCart()">
+      <textarea class="w-full border border-gray-300 rounded mt-2 py-2 px-4 outline-none" formControlName="address"></textarea>
+      <span class="text-red-400">{{ address_error }}</span>
+      <button class="block w-full rounded px-4 py-2 mt-8 text-center">
+        ĐẶT HÀNG
+      </button>
+    </form>
   </div>
 </div>

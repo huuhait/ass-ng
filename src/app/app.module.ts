@@ -27,6 +27,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { CreateUpdateComponent } from './pages/admin/products/create-update/create-update.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 registerLocaleData(en);
 
@@ -46,7 +48,9 @@ registerLocaleData(en);
     CartComponent,
     AdminComponent,
     ProductsComponent,
-    CreateUpdateComponent
+    CreateUpdateComponent,
+    SearchComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

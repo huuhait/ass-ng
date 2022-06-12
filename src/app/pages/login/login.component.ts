@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +14,9 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)])
   })
+
+  constructor(public http: HttpClient, private router: Router, public authService: AuthService) {
+  }
 
   get email_error() {
     const errors = this.formLogin.get("email")?.errors
@@ -52,6 +58,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.email_error)
+    this.authService.login(this.formLogin.get("email")?.value, this.formLogin.get("password")?.value)
   }
 }

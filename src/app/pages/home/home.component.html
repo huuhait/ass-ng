@@ -8,14 +8,6 @@
   </div>
 
   <div class="grid grid-cols-4 gap-4 mt-4">
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
+    <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
   </div>
 </div>
-
-<app-sale-products></app-sale-products>

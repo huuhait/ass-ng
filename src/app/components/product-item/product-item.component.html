@@ -6,8 +6,8 @@
     <div class="product-item-content border-t border-gray-300">
       <div class="product-item-title bold-text">{{ product.name }}</div>
       <div class="product-item-price">
-        <span class="product-item-price-old">{{ product.price }}đ </span>
-        <span class="product-item-price-now bold-text">{{ product.sale_price }}đ</span>
+        <span class="product-item-price-old">{{ product.price.toLocaleString() }}đ </span>
+        <span class="product-item-price-now bold-text">{{ product.sale_price.toLocaleString() }}đ</span>
       </div>
       <a class="product-item-link" routerLink="/product/{{ product.id }}"> XEM CHI TIẾT </a>
     </div>

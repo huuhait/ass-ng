@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +13,25 @@ export class RegisterComponent implements OnInit {
   formRegister = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    confirm_password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    confirm_password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8),
+      (control: AbstractControl): ValidationErrors | null => {
+        const password = control.parent?.get("password")?.value
+
+        if (password !== control.value) {
+          return {
+            confirm_password: true
+          }
+        }
+
+        return null
+      }
+    ]),
   })
+
+  constructor(public http: HttpClient, private router: Router, public authService: AuthService) {
+  }
 
   get email_error() {
     const errors = this.formRegister.get("email")?.errors
@@ -64,7 +84,7 @@ export class RegisterComponent implements OnInit {
       return "Password must be at least 8 characters"
     }
 
-    if (this.formRegister.get("password")?.value !== this.formRegister.get("confirm_password")?.value) {
+    if (errors["confirm_password"]) {
       return "Confirm password must be same with password"
     }
 
@@ -75,7 +95,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.authService.register(this.formRegister.get("email")?.value, this.formRegister.get("password")?.value)
   }
-
 }

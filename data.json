@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Sach A"
+    }
+  ],
+  "products": [
+    {
+      "name": "Nguyễn Nhật Án",
+      "categoryId": 1,
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "status": 1,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 5,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 6,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 7,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 8,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 9,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    },
+    {
+      "id": 10,
+      "name": "Nguyễn Nhật Ánh",
+      "price": 100000,
+      "sale_price": 90000,
+      "description": "Product description",
+      "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
+      "categoryId": 1,
+      "status": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "huuhadz2k@gmail.com",
+      "password": "$2a$10$4cRCg3NfLmN.bmmJIvIRB.EUqVBOa3CAoHNp8HWmMRIyFqrtx32JC",
+      "id": 1
+    }
+  ],
+  "carts": [
+    {
+      "userId": 1,
+      "carts": [
+        {
+          "productId": 3,
+          "quantity": 1
+        },
+        {
+          "productId": 6,
+          "quantity": 1
+        }
+      ],
+      "address": "",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "carts": [],
+      "address": "",
+      "id": 2
+    }
+  ]
+}

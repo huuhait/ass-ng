@@ -3,6 +3,35 @@
     {{ isCreate ? "Create Product" : "Update Product" }}
   </div>
 
-  <div class="admin-card-content">
-  </div>
+  <form [formGroup]="productForm" class="admin-card-content" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name">
+    </div>
+    <div class="form-control">
+      <label for="name">Price</label>
+      <input type="text" formControlName="price">
+    </div>
+    <div class="form-control">
+      <label for="name">Sale Price</label>
+      <input type="text" formControlName="sale_price">
+    </div>
+    <div class="form-control">
+      <label for="name">Status</label>
+      <mat-slide-toggle [checked]="productForm.get('status')?.value == 1" (change)="onStatusChange($event)"></mat-slide-toggle>
+    </div>
+    <div class="form-control">
+      <label for="name">Image URL</label>
+      <input type="text" formControlName="image_url">
+    </div>
+    <br>
+    <div class="form-control block !w-full">
+      <label for="name">Description</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+
+    <button class="absolute right-0 bottom-2" type="submit">
+      {{ isCreate ? "Create" : "Update" }}
+    </button>
+  </form>
 </div>
