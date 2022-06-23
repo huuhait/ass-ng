@@ -1,0 +1,36 @@
+<div class="admin-card shadow-md">
+  <div class="flex items-center justify-between w-full">
+    <div class="admin-card-title">
+      Users
+    </div>
+    <button routerLink="/admin/users/create">Create user</button>
+  </div>
+
+  <div class="admin-card-content">
+    <table class="w-full">
+      <thead>
+        <th class="text-left">ID</th>
+        <th class="text-left">Email</th>
+        <th class="text-center">Role</th>
+        <th class="text-right">Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="text-left">{{ user.id }}</td>
+          <td class="text-left">{{ user.email }}</td>
+          <td class="text-center">
+            <mat-slide-toggle [checked]="user.role == 1" (change)="onUserStatusChange(user, $event)"></mat-slide-toggle>
+          </td>
+          <td class="text-right">
+            <button routerLink="/admin/users/{{user.id}}" class="ml-2">
+              Update
+            </button>
+            <button class="ml-2" (click)="onUserDelete(user)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

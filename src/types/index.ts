@@ -18,3 +18,10 @@ export interface Category {
   id: number;
   name: string;
 }
+
+export interface User {
+  id: number;
+  email: string;
+  password: string;
+  role: number;
+}

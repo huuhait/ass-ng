@@ -1,6 +1,9 @@
 <div class="admin-card shadow-md">
-  <div class="admin-card-title">
-    Products
+  <div class="flex items-center justify-between w-full">
+    <div class="admin-card-title">
+      Products
+    </div>
+    <button routerLink="/admin/products/create">Create product</button>
   </div>
 
   <div class="admin-card-content">
@@ -23,7 +26,7 @@
             <mat-slide-toggle [checked]="product.status == 1" (change)="onProductStatusChange(product, $event)"></mat-slide-toggle>
           </td>
           <td class="text-right">
-            <button routerLink="/admin/products/1" class="ml-2">
+            <button routerLink="/admin/products/{{ product.id }}" class="ml-2">
               Update
             </button>
             <button class="ml-2" (click)="onProductDelete(product)">

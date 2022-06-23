@@ -29,6 +29,10 @@ import { ProductsComponent } from './pages/admin/products/products.component';
 import { CreateUpdateComponent } from './pages/admin/products/create-update/create-update.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { CategoriesComponent } from './pages/admin/categories/categories.component';
+import { UsersComponent } from './pages/admin/users/users.component';
+import { UsersCreateUpdateComponent } from './pages/admin/users-create-update/users-create-update.component';
+import { CategoriesCreateUpdateComponent } from './pages/admin/categories-create-update/categories-create-update.component';
 
 registerLocaleData(en);
 
@@ -50,7 +54,11 @@ registerLocaleData(en);
     ProductsComponent,
     CreateUpdateComponent,
     SearchComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoriesComponent,
+    UsersComponent,
+    UsersCreateUpdateComponent,
+    CategoriesCreateUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzIconModule,
     SwiperModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   exports: [
     MatSlideToggleModule

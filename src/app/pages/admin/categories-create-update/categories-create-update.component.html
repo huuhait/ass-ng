@@ -1,0 +1,17 @@
+<div class="admin-card shadow-md">
+  <div class="admin-card-title">
+    {{ isCreate ? "Create Category" : "Update Category" }}
+  </div>
+
+  <form [formGroup]="categoryForm" class="admin-card-content" (ngSubmit)="onSubmit()">
+    <div class="form-control mb-4">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name">
+      <span class="text-red-400">{{ name_error }}</span>
+    </div>
+
+    <button class="absolute right-0 bottom-2" type="submit" [disabled]="button_disabled">
+      {{ isCreate ? "Create" : "Update" }}
+    </button>
+  </form>
+</div>

@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   accessToken!: {
-    accessToken?: string, user?: { email: string, id: number }
+    accessToken?: string, user?: User
   }
 
   constructor(private http: HttpClient, private router: Router) {
@@ -20,6 +21,10 @@ export class AuthService {
 
   get email() {
     return this.accessToken?.user?.email
+  }
+
+  get isAdmin() {
+    return this.accessToken?.user?.role == 1
   }
 
   setAccessToken(accessToken: any) {

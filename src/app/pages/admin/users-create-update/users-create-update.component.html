@@ -1,0 +1,26 @@
+<div class="admin-card shadow-md">
+  <div class="admin-card-title">
+    {{ isCreate ? "Create User" : "Update User" }}
+  </div>
+
+  <form [formGroup]="userForm" class="admin-card-content" (ngSubmit)="onSubmit()">
+    <div class="form-control mb-4">
+      <label for="name">Email</label>
+      <input type="text" formControlName="email">
+      <span class="text-red-400">{{ email_error }}</span>
+    </div>
+    <div class="form-control mb-4">
+      <label for="name">Password</label>
+      <input type="password" formControlName="password">
+      <span class="absolute text-red-400">{{ password_error }}</span>
+    </div>
+    <div class="form-control mb-4">
+      <label for="name">Role</label>
+      <mat-slide-toggle [checked]="userForm.get('role')?.value == 1" (change)="onStatusChange($event)"></mat-slide-toggle>
+    </div>
+
+    <button class="absolute right-0 bottom-2" type="submit" [disabled]="button_disabled">
+      {{ isCreate ? "Create" : "Update" }}
+    </button>
+  </form>
+</div>

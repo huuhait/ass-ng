@@ -13,7 +13,7 @@
       "sale_price": 90000,
       "description": "Product description",
       "image_url": "https://product.hstatic.net/200000122283/product/ra_bo_suoi_-_bm_adb6e4fc8bcf417da77823d80b49e7ff_master.jpg",
-      "status": 1,
+      "status": 0,
       "id": 1
     },
     {
@@ -110,7 +110,8 @@
   "users": [
     {
       "email": "huuhadz2k@gmail.com",
-      "password": "$2a$10$4cRCg3NfLmN.bmmJIvIRB.EUqVBOa3CAoHNp8HWmMRIyFqrtx32JC",
+      "password": "$2a$10$8Od3QwS/o9gMtD5vCsXc3OyhyyrbNSqU4jlAYJI344RVDVycMnFLO",
+      "role": 1,
       "id": 1
     }
   ],

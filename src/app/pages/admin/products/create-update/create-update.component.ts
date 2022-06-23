@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/types';
 
 @Component({
-  selector: 'app-create-update',
+  selector: 'app-products-create-update',
   templateUrl: './create-update.component.html',
   styleUrls: ['./create-update.component.less']
 })
